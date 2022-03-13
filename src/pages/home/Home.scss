@@ -1,4 +1,7 @@
 .home {
-  background-color: antiquewhite;
-  height: 100vh;
+  display: flex;
+
+  .homeContainer {
+    flex: 6;
+  }
 }

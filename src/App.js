@@ -8,26 +8,28 @@ import New from "./pages/new/New";
 
 function App() {
   return (
-    <BrowserRouter>
-      <Routes>
-        <Route path="/">
-          <Route index element={<Home />} />
-          <Route path="login" element={<Login />} />
-          {/* nested routing for user*/}
-          <Route path="users">
-            <Route index element={<List />} />
-            <Route path=":id" element={<Single />} />
-            <Route path="new" element={<New />} />
+    <div className="app">
+      <BrowserRouter>
+        <Routes>
+          <Route path="/">
+            <Route index element={<Home />} />
+            <Route path="login" element={<Login />} />
+            {/* nested routing for user*/}
+            <Route path="users">
+              <Route index element={<List />} />
+              <Route path=":id" element={<Single />} />
+              <Route path="new" element={<New />} />
+            </Route>
+            {/* nested routing for products*/}
+            <Route path="products">
+              <Route index element={<List />} />
+              <Route path=":id" element={<Single />} />
+              <Route path="new" element={<New />} />
+            </Route>
           </Route>
-          {/* nested routing for products*/}
-          <Route path="products">
-            <Route index element={<List />} />
-            <Route path=":id" element={<Single />} />
-            <Route path="new" element={<New />} />
-          </Route>
-        </Route>
-      </Routes>
-    </BrowserRouter>
+        </Routes>
+      </BrowserRouter>
+    </div>
   );
 }
 
